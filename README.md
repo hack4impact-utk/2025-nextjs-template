@@ -32,12 +32,21 @@ Enable the following options
 - Require a pull request before merging
 
 - Require status checks to pass before merging
-
   - Select "pr-check" as the status check that must pass
 
-### Finish the README
+### 3. Finish the README
 
 Spec out the README.md file.
+
+### Misc
+
+Add project name to package.json
+
+Make yourself a favicon.ico and swap out the one Vercel logo with it. There are online tools to do this.
+
+Update title and description of the project in `src/app/layout.tsx`
+
+Pick a primary color (based on your nonprofit) and change the primary color in `src/styles/theme.ts`. If you want to mess around with the secondary color do that as well.
 
 ## Description
 
