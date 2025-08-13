@@ -52,7 +52,9 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
-
+      # In an ideal world, we would have a build step that checks that the project can be built
+      # However, this is a time-consuming process and we have a limited number of minutes per month of GitHub Actions
+      # so we'll just check that the project passes linting and type checking
       - name: Check that project passes linting and type checking
         run: pnpm run check
 

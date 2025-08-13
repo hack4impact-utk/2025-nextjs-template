@@ -9,6 +9,22 @@
 
 ## Tech Lead Instructions
 
+### Overview
+
+This repository serves as a template for you to get started with your project.
+
+It has
+
+- MUI set up
+
+- The DB connection set up
+
+- Authentication set up
+
+- A PR pipeline that ensures all PRs are named consistently, pass linting, and pass type checking (simulating a build but faster)
+
+- Examples of how to build forms and tables
+
 ### 1. Setup repository settings
 
 First, we need to ensure everyone commits the same way.
