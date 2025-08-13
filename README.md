@@ -34,7 +34,45 @@ Enable the following options
 - Require status checks to pass before merging
   - Select "pr-check" as the status check that must pass
 
-### 3. Finish the README
+### 3. Setup DB
+
+Make an account at Neon Postgres and get the database
+
+Copy the connection string and add it to a `.env` file
+
+```text
+DATABASE_URL=insert_string_here
+```
+
+Then, run the following command to add the next-auth tables to your db
+
+`npx drizzle-kit migrate`
+
+When you decide your DB schema, update the `schema.ts` file and consult the Drizzle documentation on how to create and execute migrations.
+
+#### 4. Setup next-auth
+
+I will assume you are using Google OAuth.
+
+If you don't need auth, remove the next-auth tables and all next-auth related stuff from this project.
+
+If you HAVE to use a credentials provider (email / password), you will have to do everything yourself. Consult the `st-christopher-truckers-relief-fund` on how this can be done. But try very hard to avoid doing this because it is a lot of extra work.
+
+Read these instructions: [Google Provider for Next-Auth](https://next-auth.js.org/providers/google)
+
+Setup the following environment variables
+
+```text
+AUTH_DRIZZLE_URL=[whatever your database_url is]
+NEXTAUTH_URL=http://localhost:3000/
+NEXTAUTH_SECRET=[generate a random string on the command line]
+GOOGLE_CLIENT_ID=
+GOOGLE_CLIENT_SECRET=
+```
+
+One way to generate the secret (or any other API key if you ever need one) is this command: `openssl rand -hex 32`
+
+### Finish the README
 
 Spec out the README.md file.
 
@@ -47,6 +85,10 @@ Make yourself a favicon.ico and swap out the one Vercel logo with it. There are 
 Update title and description of the project in `src/app/layout.tsx`
 
 Pick a primary color (based on your nonprofit) and change the primary color in `src/styles/theme.ts`. If you want to mess around with the secondary color do that as well.
+
+Delete the Tech Lead section of the README when done
+
+Environment variables are usually of type "string | undefined" but we can just force them to be string in the `global.d.ts` file
 
 ## Description
 
@@ -72,9 +114,11 @@ Please have the following VSCode extensions installed:
 
 ### Environment Variables
 
-Create a `.env.local` file in the root directory of the project and add the following variables:
+Create a `.env` file in the root directory of the project and add the following variables:
 
 ```text
+DB_CONNECTION_STRING=
+
 EXAMPLE_ENV_VAR=example-value
 EXAMPLE_ENV_VAR_2=example-value-2
 PRIVATE_ENV_VAR=
@@ -83,6 +127,7 @@ PRIVATE_ENV_VAR_2=
 
 Please contact leadership to obtain the following:
 
+- DB_CONNECTION_STRING
 - PRIVATE_ENV_VAR
 - PRIVATE_ENV_VAR_2
 

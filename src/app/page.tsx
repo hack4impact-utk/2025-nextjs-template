@@ -1,10 +1,7 @@
-import { Box, Typography } from "@mui/material";
 import { ReactNode } from "react";
 
-export default function Home(): ReactNode {
-  return (
-    <Box>
-      <Typography>Hello World</Typography>
-    </Box>
-  );
+import Home from "@/components/home";
+
+export default function HomePage(): ReactNode {
+  return <Home />;
 }
