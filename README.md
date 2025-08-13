@@ -72,7 +72,7 @@ GOOGLE_CLIENT_SECRET=
 
 One way to generate the secret (or any other API key if you ever need one) is this command: `openssl rand -hex 32`
 
-### Finish the README
+### 5. Finish the README
 
 Spec out the README.md file.
 

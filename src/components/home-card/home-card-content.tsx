@@ -43,13 +43,9 @@ export default function HomeCardContent({
             borderColor: "primary.main",
           }}
         />
-        <Typography variant="h5" component="h1" gutterBottom>
-          Welcome, {session.user?.name}!
-        </Typography>
-        <Typography variant="body1" color="text.secondary" gutterBottom>
-          {session.user?.email}
-        </Typography>
-        <Typography variant="body2" color="text.secondary" sx={{ mb: 3 }}>
+        <Typography variant="h5">Welcome, {session.user?.name}!</Typography>
+        <Typography color="text.secondary">{session.user?.email}</Typography>
+        <Typography variant="body2" color="text.secondary">
           Session expires:{" "}
           {session.expires
             ? new Date(session.expires).toLocaleDateString()
@@ -69,18 +65,11 @@ export default function HomeCardContent({
 
   return (
     <>
-      <Typography variant="h5" component="h1" gutterBottom>
-        Please Sign In
-      </Typography>
-      <Typography variant="body1" color="text.secondary" sx={{ mb: 3 }}>
+      <Typography variant="h5">Please Sign In</Typography>
+      <Typography color="text.secondary" mb={2}>
         Sign in to access your account information
       </Typography>
-      <Button
-        variant="contained"
-        size="large"
-        onClick={handleSignIn}
-        sx={{ mt: 2 }}
-      >
+      <Button variant="contained" size="large" onClick={handleSignIn}>
         Sign In with Google
       </Button>
     </>

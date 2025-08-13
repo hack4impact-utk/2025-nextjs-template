@@ -1,9 +1,9 @@
 import { Box } from "@mui/material";
 import { ReactNode } from "react";
 
-import HomeCard from "@/components/home-card";
+import ExampleForm from "@/components/example-form";
 
-export default function HomePage(): ReactNode {
+export default function ExampleFormPage(): ReactNode {
   return (
     <Box
       sx={{
@@ -14,7 +14,7 @@ export default function HomePage(): ReactNode {
         alignItems: "center",
       }}
     >
-      <HomeCard />
+      <ExampleForm />
     </Box>
   );
 }
