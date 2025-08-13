@@ -52,7 +52,7 @@ Enable the following options
 - Require a pull request before merging
 
 - Require status checks to pass before merging
-  - Select "pr-check" as the status check that must pass
+  - Add "lint-and-format" as a status check that must pass
 
 ### 3. Setup DB
 
