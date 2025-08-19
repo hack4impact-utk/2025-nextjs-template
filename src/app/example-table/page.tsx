@@ -1,12 +1,11 @@
 import { Box } from "@mui/material";
 import { ReactNode } from "react";
 
+import { getAllUsers } from "@/api/users";
 import ExampleTable from "@/components/example-table";
-import db from "@/db";
-import { users } from "@/db/schema";
 
 export default async function ExampleTablePage(): Promise<ReactNode> {
-  const allUsers = await db.select().from(users);
+  const allUsers = await getAllUsers();
 
   return (
     <Box
