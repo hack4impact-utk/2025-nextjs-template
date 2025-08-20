@@ -13,7 +13,7 @@ export async function getAllUsers(): Promise<User[]> {
  * In the future, make sure these functions are protected by authentication.
  */
 
-// export async function createUser(user: User): Promise<User> {
+// export async function createUser(user: NewUser): Promise<User> {
 //   "use server";
 //   const newUser = await db.insert(users).values(user).returning();
 //   return newUser[0];
