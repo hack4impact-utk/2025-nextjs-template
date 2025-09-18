@@ -31,6 +31,7 @@ export default tseslint.config(
       "prettier/prettier": "error",
       "no-console": ["error", { allow: ["error"] }],
       "unicorn/prevent-abbreviations": "off",
+      "unicorn/no-null": "off",
 
       // Next.js rules
       ...pluginNext.configs.recommended.rules,

@@ -1,8 +1,15 @@
 import db from "@/db";
+import { Result } from "@/types/result";
 import { User } from "@/types/schema";
+import handleError from "@/utils/handle-error";
 
-export async function getAllUsers(): Promise<User[]> {
-  return await db.query.users.findMany();
+export async function getAllUsers(): Promise<Result<User[]>> {
+  try {
+    const users = await db.query.users.findMany();
+    return [users, null];
+  } catch (error) {
+    return [null, handleError(error)];
+  }
 }
 
 /**
