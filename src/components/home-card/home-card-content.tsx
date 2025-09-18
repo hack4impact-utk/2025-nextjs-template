@@ -1,4 +1,5 @@
-import { Avatar, Button, Typography } from "@mui/material";
+import { Avatar, Box, Button, Typography } from "@mui/material";
+import Link from "next/link";
 import { Session } from "next-auth";
 import { signIn, signOut } from "next-auth/react";
 import { ReactNode } from "react";
@@ -51,14 +52,21 @@ export default function HomeCardContent({
             ? new Date(session.expires).toLocaleDateString()
             : "Unknown"}
         </Typography>
-        <Button
-          variant="outlined"
-          color="error"
-          onClick={handleSignOut}
-          sx={{ mt: 2 }}
-        >
-          Sign Out
-        </Button>
+        <Box sx={{ display: "flex", flexDirection: "column", gap: 2, mt: 2 }}>
+          <Button variant="outlined" color="error" onClick={handleSignOut}>
+            Sign Out
+          </Button>
+          <Link href="/example-table">
+            <Button variant="outlined" sx={{ width: "100%" }}>
+              Example Table
+            </Button>
+          </Link>
+          <Link href="/example-form">
+            <Button variant="outlined" sx={{ width: "100%" }}>
+              Example Form
+            </Button>
+          </Link>
+        </Box>
       </>
     );
   }
